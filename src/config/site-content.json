@@ -42,7 +42,7 @@
 			"order": 3
 		},
 		{
-			"id": "juejin",
+			"id": "bilibili",
 			"type": "bilibili",
 			"value": "https://space.bilibili.com/3461574540921489/upload/opus675422382",
 			"label": "MilkyAi",
@@ -51,14 +51,14 @@
 		{
 			"id": "email",
 			"type": "email",
-			"value": "yysuni1001@gmail.com",
+			"value": "milkyai.dev@gmail.com",
 			"label": "",
 			"order": 1
 		},
 		{
-			"id": "button-1775101236443",
-			"type": "link",
-			"value": "www.linkedin.com/in/weiyanupenn",
+			"id": "linkedin",
+			"type": "linkedin",
+			"value": "https://www.linkedin.com/in/weiyanupenn",
 			"label": "LinkedIn",
 			"order": 4
 		}
