@@ -5,21 +5,19 @@
 		"username": "Milky"
 	},
 	"theme": {
-		"colorBrand": "#9BF97B",
-		"colorPrimary": "#e6e8e8",
-		"colorSecondary": "#acadae",
-		"colorBrandSecondary": "#51d0b9",
-		"colorBg": "#0a051f",
-		"colorBorder": "#8a8a8a5e",
-		"colorCard": "#ffffff0e",
-		"colorArticle": "#6f6f6f33"
+		"colorBrand": "#289EA3",
+		"colorPrimary": "#334f52",
+		"colorSecondary": "#7b888e",
+		"colorBrandSecondary": "#1fc9e7",
+		"colorBg": "#eeeeee",
+		"colorBorder": "#ffffff",
+		"colorCard": "#ffffff66",
+		"colorArticle": "#ffffffcc"
 	},
 	"backgroundColors": [
-		"#70cfff",
-		"#ee80b8",
-		"#f29ba58a",
-		"#2745f2",
-		"#66bff9"
+		"#f6bbd0",
+		"#51ACD0",
+		"#ff75a7d7"
 	],
 	"artImages": [
 		{
