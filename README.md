@@ -21,25 +21,13 @@ export const GITHUB_CONFIG = {
 
 ## 2. 部署
 
-我这里熟悉 Vercel 部署，就以 Vercel 部署为例子。创建 Project => Import 这个项目
-
-![](https://www.yysuni.com/blogs/readme/730266f17fab9717.png)
-
-无需配置，直接点部署
-
-![](https://www.yysuni.com/blogs/readme/95dee9a69154d0d0.png)
-
-大约 60 秒会部署完成，有一个直接 vercel 域名，如：https://2025-blog-public.vercel.app/
+以 Vercel 部署为例子。创建 Project => Import 这个项目；无需配置，直接点部署。大约 60 秒会部署完成，有一个直接 vercel 域名，如：https://2025-blog-public.vercel.app/
 
 到这里部署网站已经完成了，下一步创建 Github App
 
 ## 3. 创建 Github App 链接仓库
 
-在 github 个人设置里面，找到最下面的 Developer Settings ，点击进入
-
-![](https://www.yysuni.com/blogs/readme/0abb3b592cbedad6.png)
-
-进入开发者页面，点击 **New Github App**
+在 github 个人设置里面，找到最下面的 Developer Settings ，点击进入开发者页面，点击 **New Github App**
 
 *GitHub App name* 和 *Homepage URL* , 输入什么都不影响。Webhook 也关闭，不需要。
 
@@ -51,21 +39,15 @@ export const GITHUB_CONFIG = {
 
 点击创建，谁能安装这个仓库这个选择无所谓。直接创建。
 
-![](https://www.yysuni.com/blogs/readme/aa002e6805ab2d65.png)
-
-
 ### 创建密钥
 
-创建好 Github App 后会提示必须创建一个 **Private Key**，直接创建，会自动下载（不见了也不要紧，后面自己再创建再下载就行）。页面上有个 **App ID** 需要复制一下
+创建好 Github App 后会提示必须创建一个 **Private Key**，直接创建，会自动下载。页面上有个 **App ID** 需要复制一下
 
 再切换到安装页面
 
 ![](https://www.yysuni.com/blogs/readme/c122b1585bb7a46a.png)
 
 这里一定要只**授权当前项目**。
-
-![](https://www.yysuni.com/blogs/readme/2cf1cee3b04326f1.png)
-
 点击安装，就完成了 Github App 管理该仓库的权限设置了。下一步就是让前端知道推送那个项目，就是最开始提到的环境变量。（如果你不会设置环境变量，直接改仓库文件 `src/consts.ts` 也行。因为是公开的，所以环境变量意义也不大）
 
 直接输入这几个环境变量值就行，一般只用设置 OWNER 和 APP_ID。其它配置不用管，直接输入创建就行。
