@@ -38,7 +38,7 @@
 			"id": "github",
 			"type": "github",
 			"value": "https://github.com/Kaitzz",
-			"label": "Github",
+			"label": "",
 			"order": 3
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "linkedin",
 			"type": "linkedin",
 			"value": "https://www.linkedin.com/in/weiyanupenn",
-			"label": "LinkedIn",
+			"label": "",
 			"order": 4
 		}
 	],

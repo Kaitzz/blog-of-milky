@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/jsrsasign": "^10.5.15",
+    "chiron-go-round-tc-webfont": "^1.0.10",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.18",
     "html-react-parser": "^5.2.8",
