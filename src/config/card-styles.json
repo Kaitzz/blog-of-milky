@@ -30,7 +30,7 @@
 		"order": 5,
 		"offsetX": null,
 		"offsetY": null,
-		"enabled": true
+		"enabled": false
 	},
 	"musicCard": {
 		"width": 293,
