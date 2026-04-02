@@ -2,7 +2,7 @@ import { useCenterStore } from '@/hooks/use-center'
 import GithubSVG from '@/svgs/github.svg'
 import { ANIMATION_DELAY, CARD_SPACING } from '@/consts'
 import { useConfigStore } from './stores/config-store'
-import JuejinSVG from '@/svgs/juejin.svg'
+import LinkedInSVG from '@/svgs/linkedin.svg'
 import EmailSVG from '@/svgs/email.svg'
 import XSVG from '@/svgs/x.svg'
 import TgSVG from '@/svgs/tg.svg'
@@ -11,7 +11,7 @@ import FacebookSVG from '@/svgs/facebook.svg'
 import TiktokSVG from '@/svgs/tiktok.svg'
 import InstagramSVG from '@/svgs/instagram.svg'
 import WeiboSVG from '@/svgs/weibo.svg'
-import XiaohongshuSVG from '@/svgs/小红书.svg'
+import RednoteSVG from '@/svgs/小红书.svg'
 import ZhihuSVG from '@/svgs/知乎.svg'
 import BilibiliSVG from '@/svgs/哔哩哔哩.svg'
 import QqSVG from '@/svgs/qq.svg'
@@ -25,7 +25,7 @@ import { createPortal } from 'react-dom'
 
 type SocialButtonType =
 	| 'github'
-	| 'juejin'
+	| 'linkedin'
 	| 'email'
 	| 'link'
 	| 'x'
@@ -35,7 +35,7 @@ type SocialButtonType =
 	| 'tiktok'
 	| 'instagram'
 	| 'weibo'
-	| 'xiaohongshu'
+	| 'rednote'
 	| 'zhihu'
 	| 'bilibili'
 	| 'qq'
@@ -111,7 +111,7 @@ export default function SocialButtons() {
 
 	const iconMap: Record<SocialButtonType, React.ComponentType<{ className?: string }>> = {
 		github: GithubSVG,
-		juejin: JuejinSVG,
+		linkedin: LinkedInSVG,
 		email: EmailSVG,
 		wechat: WechatSVG,
 		x: XSVG,
@@ -120,7 +120,7 @@ export default function SocialButtons() {
 		tiktok: TiktokSVG,
 		instagram: InstagramSVG,
 		weibo: WeiboSVG,
-		xiaohongshu: XiaohongshuSVG,
+		rednote: RednoteSVG,
 		zhihu: ZhihuSVG,
 		bilibili: BilibiliSVG,
 		qq: QqSVG,
@@ -158,7 +158,7 @@ export default function SocialButtons() {
 
 		if (button.type === 'email' || button.type === 'wechat' || button.type === 'qq') {
 			const messageMap: Record<'email' | 'wechat' | 'qq', string> = {
-				email: '邮箱已复制到剪贴板',
+				email: 'Email Pasted to Clipboard',
 				wechat: '微信号已复制到剪贴板',
 				qq: 'QQ号已复制到剪贴板'
 			}

@@ -35,10 +35,10 @@ function clearTokenCache(): void {
 }
 
 export async function getPemFromCache(): Promise<string | null> {
-	if (typeof sessionStorage === 'undefined') return null
+	if (typeof localStorage === 'undefined') return null
 	try {
 		// 解密缓存中的 pem
-		const encryptedPem = sessionStorage.getItem(GITHUB_PEM_CACHE_KEY)
+		const encryptedPem = localStorage.getItem(GITHUB_PEM_CACHE_KEY)
 		if (!encryptedPem) return null
 		return await decrypt(encryptedPem, GITHUB_CONFIG.ENCRYPT_KEY)
 	} catch {
@@ -47,20 +47,20 @@ export async function getPemFromCache(): Promise<string | null> {
 }
 
 export async function savePemToCache(pem: string): Promise<void> {
-	if (typeof sessionStorage === 'undefined') return
+	if (typeof localStorage === 'undefined') return
 	try {
 		// 加密 pem 后存储
 		const encryptedPem = await encrypt(pem, GITHUB_CONFIG.ENCRYPT_KEY)
-		sessionStorage.setItem(GITHUB_PEM_CACHE_KEY, encryptedPem)
+		localStorage.setItem(GITHUB_PEM_CACHE_KEY, encryptedPem)
 	} catch (error) {
 		console.error('Failed to save pem to cache:', error)
 	}
 }
 
 function clearPemCache(): void {
-	if (typeof sessionStorage === 'undefined') return
+	if (typeof localStorage === 'undefined') return
 	try {
-		sessionStorage.removeItem(GITHUB_PEM_CACHE_KEY)
+		localStorage.removeItem(GITHUB_PEM_CACHE_KEY)
 	} catch (error) {
 		console.error('Failed to clear pem cache:', error)
 	}

@@ -1,4 +1,4 @@
-# 2025 Blog
+# Blog of Milky
 
 > 最新引导说明：https://www.yysuni.com/blog/readme
 
@@ -10,8 +10,8 @@
 
 ```ts
 export const GITHUB_CONFIG = {
-	OWNER: process.env.NEXT_PUBLIC_GITHUB_OWNER || 'yysuni',
-	REPO: process.env.NEXT_PUBLIC_GITHUB_REPO || '2025-blog-public',
+	OWNER: process.env.NEXT_PUBLIC_GITHUB_OWNER || 'Kaitzz',
+	REPO: process.env.NEXT_PUBLIC_GITHUB_REPO || 'blog-of-milky',
 	BRANCH: process.env.NEXT_PUBLIC_GITHUB_BRANCH || 'main',
 	APP_ID: process.env.NEXT_PUBLIC_GITHUB_APP_ID || '-'
 } as const
@@ -19,9 +19,9 @@ export const GITHUB_CONFIG = {
 
 也可以自己手动先调整安装，可自行 `pnpm i`
 
-## 2. 部署
+## 2. Vercel 部署
 
-以 Vercel 部署为例子。创建 Project => Import 这个项目；无需配置，直接点部署。大约 60 秒会部署完成，有一个直接 vercel 域名，如：https://2025-blog-public.vercel.app/
+创建 Project => Import 这个项目；无需配置，直接点部署。大约 60 秒会部署完成，有一个直接 vercel 域名，如：https://2025-blog-public.vercel.app/
 
 到这里部署网站已经完成了，下一步创建 Github App
 
@@ -31,11 +31,7 @@ export const GITHUB_CONFIG = {
 
 *GitHub App name* 和 *Homepage URL* , 输入什么都不影响。Webhook 也关闭，不需要。
 
-![](https://www.yysuni.com/blogs/readme/71dcd9cf8ec967c0.png)
-
-只需要注意设置一个仓库 write 权限，其它不用。
-
-![](https://www.yysuni.com/blogs/readme/2be290016e56cd34.png)
+只需要设置一个仓库 write 权限，其它不用。
 
 点击创建，谁能安装这个仓库这个选择无所谓。直接创建。
 
@@ -43,11 +39,7 @@ export const GITHUB_CONFIG = {
 
 创建好 Github App 后会提示必须创建一个 **Private Key**，直接创建，会自动下载。页面上有个 **App ID** 需要复制一下
 
-再切换到安装页面
-
-![](https://www.yysuni.com/blogs/readme/c122b1585bb7a46a.png)
-
-这里一定要只**授权当前项目**。
+再切换到 GitHub App 安装页面, 这里一定要只**授权当前项目**。
 点击安装，就完成了 Github App 管理该仓库的权限设置了。下一步就是让前端知道推送那个项目，就是最开始提到的环境变量。（如果你不会设置环境变量，直接改仓库文件 `src/consts.ts` 也行。因为是公开的，所以环境变量意义也不大）
 
 直接输入这几个环境变量值就行，一般只用设置 OWNER 和 APP_ID。其它配置不用管，直接输入创建就行。
@@ -65,29 +57,24 @@ export const GITHUB_CONFIG = {
 
 **提示**，网站前端页面删改完提示成功之后，你需要等待后台的部署完成，再刷新页面才能完成服务器内容的更新哦。
 
-## 5. 删除
-
-使用这个项目应该第一件事需要删除我的 blog，单独删除，批量删除已完成。
-
-## 6. 配置
+## 5. 配置
 
 大部分页面右上角都会有一个编辑按钮，意味着你可以使用 **private key** 进行配置部署。
 
-### 6.1 网站配置
+### 5.1 网站配置
 
 首页有一个不显眼的配置按钮，点击就能看到现在可以配置的内容。
 
-![](https://www.yysuni.com/blogs/readme/cddb4710e08a5069.png)
 
-## 7. 写 blog
+## 6. 写 blog
 
 写 blog 的图片管理，可能会有疑惑。图片管理推荐逻辑是先点击 **+ 号** 添加图片，（推荐先压缩好，尺寸推荐宽度不超过 1200）。然后将上传好的图片直接拖入文案编辑区，这就已经添加好了，点击右上角预览就可以看到效果。
 
-## 8. 写给非前端
+## 7. 写给非前端
 
 非前端配置内容，还是需要一个文件指引。下面写一些更细致的代码配置。
 
-### 8.1 移除 Liquid Grass
+### 7.1 移除 Liquid Grass
 
 进入 `src/layout/index.tsx` 文件，删除两行代码，然后提交代码到你的 github
 ```tsx
@@ -98,7 +85,7 @@ const LiquidGrass = dynamic(() => import('@/components/liquid-grass'), { ssr: fa
 
 ![](https://www.yysuni.com/blogs/readme/f70ff3fe3a77f193.png)
 
-### 8.2 配置首页内容
+### 7.2 配置首页内容
 
 首页的内容现在只能前端配置一部分，所以代码更改在 `src/app/(home)` 目录，这个目录代表首页所有文件。首页的具体文件为  `src/app/(home)/page.tsx`
 
@@ -110,7 +97,7 @@ const LiquidGrass = dynamic(() => import('@/components/liquid-grass'), { ssr: fa
 
 ![](https://www.yysuni.com/blogs/readme/20b0791d012163ee.png)
 
-## 9. 互助群
+## 8. 互助群
 
 对于完全不是**程序员**的用户，确实会对于更新代码后，如何同步，如何**合并代码**手足无措。我创建了一个 **QQ群**（加群会简单点），或者 vx 群还是 tg 群会好一点可以 issue 里面说下就行。
 
@@ -134,13 +121,3 @@ tg 群：1月1号，才创建的 tg 群 https://t.me/public_blog_2025
 因为这个 Card 是全局都在的，所以放在了 `src/components` 目录
 
 ![](https://www.yysuni.com/blogs/readme/9780c38f886322fd.png)
-
-## Star History
-
-<a href="https://www.star-history.com/#YYsuni/2025-blog-public&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=YYsuni/2025-blog-public&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=YYsuni/2025-blog-public&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=YYsuni/2025-blog-public&type=date&legend=top-left" />
- </picture>
-</a>
